@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+        .bg-home {
+            background-image: url("{% static 'pages/images/bg-landing.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            height: calc(100vh - 56px);
+        }
+        .sarabun-extralight {
+            font-family: "Sarabun", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        .title {
+            font-size: 5rem;
+            color: #9a9a9a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .subtitle {
+            font-size: 2rem;
+            text-shadow: #40cfce 1px 0 30px;
+        }
+    </style>
+
+    <div class="bg-home">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+            <h1 class="sarabun-extralight title">Jonathan Alfonso</h1>
+            <h2 class="sarabun-extralight title subtitle">Développeur fullstack</h2>
+        </div>
+    </div>
+{% endblock page_content %}

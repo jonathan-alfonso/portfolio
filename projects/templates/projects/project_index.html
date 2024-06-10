@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <style>
+        .sarabun-extralight {
+            font-family: "Sarabun", sans-serif;
+            font-weight: 200;
+            font-style: normal;
+        }
+        .title {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+    </style>
+
+    <div class="container">
+        <h1 class="sarabun-extralight title">Projets</h1>
+        <div class="row">
+        {% for project in projects %}
+            <div class="col-md-4">
+                <div class="card mb-2">
+                    {% if project.image %}
+                        <img class="card-img-top" src="{{ project.image.url }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
+                            Lire plus
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock page_content %}
